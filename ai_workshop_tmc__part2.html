@@ -4,7 +4,6 @@
 <head><meta charset="utf-8"/>
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
 <title>ai_workshop_tmc slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
@@ -7273,21 +7272,6 @@ a.anchor-link {
 }
 </style>
 <style type="text/css">
-.image-container {
-    max-width: 100%;
-    max-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.image-container img {
-    max-width: 100%;
-    max-height: 100%;
-    height: auto;
-    width: auto;
-}
 /* Overrides of notebook CSS for static HTML export */
 .reveal {
   font-size: 160%;
@@ -7456,7 +7440,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1>Part II</br>Building the AI Assistant</h1>
+<h1>Part IIBuilding the AI Assistant</h1>
 </div>
 </div>
 </div>
@@ -7513,7 +7497,7 @@ main {
 </div>
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=48ae92ca-3e92-4b2f-8b78-10130d41749e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7535,7 +7519,7 @@ main {
 </div>
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=192fd6c0-9607-4a12-bccd-f8183153597b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7627,7 +7611,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="image-container">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><img alt="/overview.jpeg" src="assets/imgs/overview.jpeg"/></p>
 </div>
 </div>
@@ -7671,12 +7655,12 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div style="width: 100%; overflow: hidden; text-align: center;">
-<p><img alt="assets/imgs/simple_rag.png" src="assets/imgs/simple_rag.png" style="max-width: 100%; height: auto; display: inline-block;"/></p>
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><img alt="assets/imgs/simple_rag.png" src="assets/imgs/simple_rag.png"/></p>
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=963535df">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7698,7 +7682,8 @@ main {
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div>
+</aside></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4434f741">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7773,7 +7758,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [131]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [348]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">bs4</span>  <span class="c1"># Library for web scraping and parsing HTML/XML</span>
@@ -7785,7 +7770,8 @@ main {
 <span class="kn">from</span> <span class="nn">langchain_community.embeddings.ollama</span> <span class="kn">import</span> <span class="n">OllamaEmbeddings</span>  <span class="c1"># Ollama embeddings for text representation</span>
 <span class="kn">from</span> <span class="nn">langchain_community.document_loaders</span> <span class="kn">import</span> <span class="n">WebBaseLoader</span>  <span class="c1"># Load documents from the web</span>
 <span class="kn">from</span> <span class="nn">langchain_community.vectorstores</span> <span class="kn">import</span> <span class="n">Chroma</span>  <span class="c1"># Chroma vector store for efficient retrieval</span>
-<span class="kn">from</span> <span class="nn">langchain_community.document_loaders</span> <span class="kn">import</span> <span class="n">PyPDFLoader</span>
+<span class="kn">from</span> <span class="nn">langchain_community.document_loaders</span> <span class="kn">import</span> <span class="n">PyPDFLoader</span> <span class="c1"># reading in pdfs</span>
+<span class="kn">from</span> <span class="nn">langchain.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span> <span class="c1"># class for promts</span>
 </pre></div>
 </div>
 </div>
@@ -7817,7 +7803,7 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9a0a964e-d7d5-46f3-bc88-645023b6a615">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9a0a964e-d7d5-46f3-bc88-645023b6a615">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7842,7 +7828,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=492978da-2e2b-4e99-a399-754e17092e29">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7853,7 +7839,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=952dd1ab-246a-4962-a34a-94ac01ae08eb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7864,7 +7850,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=07a72179-477a-4769-b161-563b01ffc6a6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7875,12 +7861,12 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=071aa7c5-f6e6-45a0-babb-1bdb364b70b0">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=071aa7c5-f6e6-45a0-babb-1bdb364b70b0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [295]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [335]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># pdf document loader</span>
@@ -7893,32 +7879,12 @@ main {
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Ignoring wrong pointing object 69 0 (offset 0)
-Ignoring wrong pointing object 72 0 (offset 0)
-Ignoring wrong pointing object 75 0 (offset 0)
-Ignoring wrong pointing object 78 0 (offset 0)
-Ignoring wrong pointing object 99 0 (offset 0)
-Ignoring wrong pointing object 101 0 (offset 0)
-Ignoring wrong pointing object 103 0 (offset 0)
-Ignoring wrong pointing object 105 0 (offset 0)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8c62ac47-eb7d-4d8e-b620-2d9a61de25e8">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8c62ac47-eb7d-4d8e-b620-2d9a61de25e8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [296]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [336]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
@@ -7932,19 +7898,19 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[296]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[336]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>1</pre>
+<pre>4</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b43c96b9-4866-43de-8abe-6cacc65c4697">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b43c96b9-4866-43de-8abe-6cacc65c4697">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [297]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [337]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">docs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">page_content</span><span class="p">[:</span><span class="mi">300</span><span class="p">]</span>
@@ -7958,25 +7924,25 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[297]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[337]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>"Room to playAt the Entrepreneurial Lab, we believe in the power of multidisciplinary collaboration and the freedom to explore.Here, diverse teams bringing together various skills to tackle the multifaceted challenges of today. It's whereindividual competencies unite to solve complex problems, drivin"</pre>
+<pre>"Room to play\nAt the Entrepreneurial Lab, we believe in the power of multidisciplinary collaboration and\nthe freedom to explore. Here, diverse teams bringing together various skills to tackle the\nmultifaceted challenges of today. It's where individual competencies unite to solve\ncomplex problems, dri"</pre>
 </div>
 </div>
 </div>
 </div>
-</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ce950f21-f367-416e-a3ee-2e6e112969f9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="HandsOn:-Web-Loader">HandsOn: Web Loader<a class="anchor-link" href="#HandsOn:-Web-Loader">¶</a></h4>
+<h4 id="HandsOn-----Web-Loader">HandsOn --- Web Loader<a class="anchor-link" href="#HandsOn-----Web-Loader">¶</a></h4>
 </div>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3dac2e60-8327-4fad-8817-55b090073e56">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7992,7 +7958,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5778c31a-6138-4130-8865-31a08e82b9fb">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5778c31a-6138-4130-8865-31a08e82b9fb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8010,7 +7976,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8f04f1c4-ddf2-4c00-b3dd-8154e3ef994a">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8f04f1c4-ddf2-4c00-b3dd-8154e3ef994a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8037,7 +8003,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fc7e55bc-acee-4378-9842-a20a504c5e9a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8048,7 +8014,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b85118b9-cfed-4e89-9c02-75cd1be5ad1f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8059,7 +8025,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bbad834c-c2a5-4674-881a-663839b5565f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8070,19 +8036,22 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e668d339-3951-4662-8387-c3d296646906">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e668d339-3951-4662-8387-c3d296646906">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [299]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [383]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Split</span>
-<span class="kn">from</span> <span class="nn">langchain.text_splitter</span> <span class="kn">import</span> <span class="n">RecursiveCharacterTextSplitter</span>
 <span class="n">text_splitter</span> <span class="o">=</span> <span class="n">RecursiveCharacterTextSplitter</span><span class="o">.</span><span class="n">from_tiktoken_encoder</span><span class="p">(</span>
     <span class="n">chunk_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> 
-    <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">20</span>
+<span class="p">)</span>
+
+<span class="n">text_splitter</span> <span class="o">=</span> <span class="n">RecursiveCharacterTextSplitter</span><span class="p">(</span>
+    <span class="n">chunk_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">chunk_overlap</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">length_function</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
 
 <span class="c1"># Make splits</span>
 <span class="n">splits</span> <span class="o">=</span> <span class="n">text_splitter</span><span class="o">.</span><span class="n">split_documents</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
@@ -8091,23 +8060,12 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca169f93-215a-4a99-bb28-b5b41d62aa08">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>This text splitter is the recommended one for generic text. It is parameterized by a list of characters. It tries to split on them in order until the chunks are small enough. The default list is ["\n\n", "\n", " ", ""]. This has the effect of trying to keep all paragraphs (and then sentences, and then words) together as long as possible, as those would generically seem to be the strongest semantically related pieces of text.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=46ca07fc-0036-4a60-9912-c7568d60e862">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=46ca07fc-0036-4a60-9912-c7568d60e862">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [300]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [384]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">splits</span><span class="p">)</span>
@@ -8121,19 +8079,19 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[300]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[384]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>5</pre>
+<pre>9</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=359faa46-81d6-4832-a193-5f2ad5009c47">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=359faa46-81d6-4832-a193-5f2ad5009c47">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [302]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [386]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">page_content</span><span class="p">[:</span><span class="mi">500</span><span class="p">]</span>
@@ -8147,19 +8105,19 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[302]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[386]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>"Room to playAt the Entrepreneurial Lab, we believe in the power of multidisciplinary collaboration and the freedom to explore.Here, diverse teams bringing together various skills to tackle the multifaceted challenges of today. It's whereindividual competencies unite to solve complex problems, driving innovative solutions through collectiveexpertise.Through hands-on, experienced-based learning, we create an environment where experimentation is encouraged,failures are embraced as opportunities for"</pre>
+<pre>"Room to play\nAt the Entrepreneurial Lab, we believe in the power of multidisciplinary collaboration and\nthe freedom to explore. Here, diverse teams bringing together various skills to tackle the\nmultifaceted challenges of today. It's where individual competencies unite to solve\ncomplex problems, driving innovative solutions through collective expertise.\nThrough hands-on, experienced-based learning, we create an environment where"</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e70dfee8-75c6-4504-87c2-a46673488b8f">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e70dfee8-75c6-4504-87c2-a46673488b8f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [303]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [387]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">docs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">page_content</span>
@@ -8173,19 +8131,19 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[303]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[387]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>"Room to playAt the Entrepreneurial Lab, we believe in the power of multidisciplinary collaboration and the freedom to explore.Here, diverse teams bringing together various skills to tackle the multifaceted challenges of today. It's whereindividual competencies unite to solve complex problems, driving innovative solutions through collectiveexpertise.Through hands-on, experienced-based learning, we create an environment where experimentation is encouraged,failures are embraced as opportunities for growth, and breakthroughs are celebrated.Whether it's pioneering technology or disruptive healthcare solutions, the Entrepreneurial Lab provides the space,resources, and collaborative spirit to turn your vision into a successful venture.How it worksSounds promising, doesn't it? But how exactly does the Entrepreneurial Lab operate?&gt; Our employeneurs work on their own innovation if they desire, but they do this alongside their client project.&gt; TMC supports with a physical lab and possibly even with financial resources.&gt; The ownership of the innovation remains of our employeneurs; TMC has no interest in it.&gt; The first spin-offs have already been rolled out, that is what we call true employeneurship!Collaboration with our specialistsNext to our own projects, we offer support to external partiesseeking solutions for specific project challenges. Whether it’s atechnical issue or a strategic challenge, we offer a platform wherewe will dive into your project. By engaging with us, you gainaccess to a pool of top talent, our Employeneurs, who eagerlycontribute their expertise and creativity to address your needs.Let's unite our efforts and realize your project's goals by accessingthe combined expertise of our Entrepreneurial Lab's diversetalents and specialized knowledge.InternshipsIf you are an entrepreneurial student, excited to make an impact in a real-world project, the Entrepreneurial Labmight be just the place for you. We offer an environment where you can directly contribute by working on one ofthe projects, or conducting a research for one of them. Our experienced professionals are keen to guide you alongyour way as you help shape a beter tomorrow.\n▶\nLet's get in touch!Reach out for opportunities, collaborations, orquestions. We're here to connect.CONTACT US\nBUILDING THE FUTURE INThe EntrepreneurialLabThis is the place where you can let your technical dreamscome true. If you have a groundbreaking idea for a newinnovation, you can initiate your project and take it fromconcept to reality with the support of a vibrant community oflike-minded innovators.\nFOLLOW US:\uf0e1\uf16d\ue07b\uf39e\uf167Our dedication lies in being a greatworkplace where our engineers,scientists, and digital experts canthrive. Together, we're not justshaping a company; we're buildingthe global home of employeneurs!CareersGraduate programsVIE ProgramCorporate vacanciesAll vacanciesService areasTechnology &amp; EngineeringDigital &amp; ITEnergy &amp; RenewablesLife Sciences &amp; PharmaDiscover TMCAbout usUpdatesFAQContact"</pre>
+<pre>"Room to play\nAt the Entrepreneurial Lab, we believe in the power of multidisciplinary collaboration and\nthe freedom to explore. Here, diverse teams bringing together various skills to tackle the\nmultifaceted challenges of today. It's where individual competencies unite to solve\ncomplex problems, driving innovative solutions through collective expertise.\nThrough hands-on, experienced-based learning, we create an environment where\nexperimentation is encouraged, failures are embraced as opportunities for growth, and\nbreakthroughs are celebrated.\nWhether it's pioneering technology or disruptive healthcare solutions, the Entrepreneurial\nLab provides the space, resources, and collaborative spirit to turn your vision into a\nsuccessful venture.\nHow it works\nSounds promising, doesn't it? But how exactly does the Entrepreneurial Lab operate?\n&gt; Our employeneurs work on their own innovation if they desire, but they do this\nalongside their client project.\n&gt; TMC supports with a physical lab and possibly even with financial resources.\n&gt; The ownership of the innovation remains of our employeneurs; TMC has no interest in\nit.\nBUILDING THE FUTURE IN\nThe Entrepreneurial Lab\nThis is the place where you can let your technical dreams come true. If you\nhave a groundbreaking idea for a new innovation, you can initiate your\nproject and take it from concept to reality with the support of a vibrant\ncommunity of like-minded innovators.\x00 \x00"</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c580505e-c75d-4749-8c52-b3171654542c">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c580505e-c75d-4749-8c52-b3171654542c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [304]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [388]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">page_content</span>
@@ -8199,19 +8157,19 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[304]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[388]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>"Room to playAt the Entrepreneurial Lab, we believe in the power of multidisciplinary collaboration and the freedom to explore.Here, diverse teams bringing together various skills to tackle the multifaceted challenges of today. It's whereindividual competencies unite to solve complex problems, driving innovative solutions through collectiveexpertise.Through hands-on, experienced-based learning, we create an environment where experimentation is encouraged,failures are embraced as opportunities for growth, and breakthroughs are celebrated.Whether it's pioneering technology or disruptive healthcare solutions, the Entrepreneurial Lab provides the space,resources, and collaborative spirit to turn your vision into a successful venture.How it worksSounds promising, doesn't it? But how exactly does the Entrepreneurial Lab operate?&gt; Our employeneurs work on their own innovation if they desire, but they do this alongside their client project.&gt; TMC supports with a physical lab and possibly even with financial resources.&gt; The ownership of the innovation remains of our"</pre>
+<pre>"Room to play\nAt the Entrepreneurial Lab, we believe in the power of multidisciplinary collaboration and\nthe freedom to explore. Here, diverse teams bringing together various skills to tackle the\nmultifaceted challenges of today. It's where individual competencies unite to solve\ncomplex problems, driving innovative solutions through collective expertise.\nThrough hands-on, experienced-based learning, we create an environment where"</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=238b3a45-8093-4694-8697-6406c5b9c146">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=238b3a45-8093-4694-8697-6406c5b9c146">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [305]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [389]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">splits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">page_content</span>
@@ -8225,14 +8183,14 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[305]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[389]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>"with a physical lab and possibly even with financial resources.&gt; The ownership of the innovation remains of our employeneurs; TMC has no interest in it.&gt; The first spin-offs have already been rolled out, that is what we call true employeneurship!Collaboration with our specialistsNext to our own projects, we offer support to external partiesseeking solutions for specific project challenges. Whether it’s atechnical issue or a strategic challenge, we offer a platform wherewe will dive into your project. By engaging with us, you gainaccess to a pool of top talent, our Employeneurs, who eagerlycontribute their expertise and creativity to address your needs.Let's unite our efforts and realize your project's goals by accessingthe combined expertise of our Entrepreneurial Lab's diversetalents and specialized knowledge.InternshipsIf you are an entrepreneurial student, excited to make an impact in a real-world project, the Entrepreneurial Labmight be just the"</pre>
+<pre>"experimentation is encouraged, failures are embraced as opportunities for growth, and\nbreakthroughs are celebrated.\nWhether it's pioneering technology or disruptive healthcare solutions, the Entrepreneurial\nLab provides the space, resources, and collaborative spirit to turn your vision into a\nsuccessful venture.\nHow it works\nSounds promising, doesn't it? But how exactly does the Entrepreneurial Lab operate?\n&gt; Our employeneurs work on their own innovation if they desire, but they do this"</pre>
 </div>
 </div>
 </div>
 </div>
-</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=16ba267a-bc98-4020-bbdf-38f3e0a3d849">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8243,7 +8201,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f04fd74-829f-472c-a1bc-ec6521a0529f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8254,7 +8212,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=615960ac-fe6c-4382-96d2-7daa65d9d358">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8265,7 +8223,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=14444a47-40d4-4d30-8990-396318d6ddf1">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=14444a47-40d4-4d30-8990-396318d6ddf1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8279,7 +8237,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8d6378c5-2836-4a98-8d3d-e1a4aa4ab8e8">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8d6378c5-2836-4a98-8d3d-e1a4aa4ab8e8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8295,7 +8253,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=596cfd58-11c9-45d3-94df-52580ab49daa">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=596cfd58-11c9-45d3-94df-52580ab49daa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8321,7 +8279,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b4f790c8-28ab-404a-8249-09b7b683ffb7">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b4f790c8-28ab-404a-8249-09b7b683ffb7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8347,7 +8305,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f717689a-9cbd-4259-9ef7-802b09f05440">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f717689a-9cbd-4259-9ef7-802b09f05440">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8376,7 +8334,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ebe97626-8cf4-4944-bf85-839e38e07745">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8387,7 +8345,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f5e0e35f-6861-4c5e-9301-04fd5408f8f8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8398,7 +8356,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=12668e52-bad0-4b0c-9c12-861e3c5b6c4d">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=12668e52-bad0-4b0c-9c12-861e3c5b6c4d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8423,7 +8381,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b0e464ae-6b39-4fa3-a758-5dc7e1cdc89a">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b0e464ae-6b39-4fa3-a758-5dc7e1cdc89a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8450,18 +8408,18 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7379847f-a71f-4b39-aac8-22afbe0eb092">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="HandsOn">HandsOn<a class="anchor-link" href="#HandsOn">¶</a></h4>
+<h4 id="HandsOn-----Better-Embedding">HandsOn --- Better Embedding<a class="anchor-link" href="#HandsOn-----Better-Embedding">¶</a></h4>
 </div>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dd19f006-cc6f-47a1-a300-16786601cc64">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8474,7 +8432,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=39b29cf5-23ed-4c9c-8bc0-76e64e128cbf">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=39b29cf5-23ed-4c9c-8bc0-76e64e128cbf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8488,7 +8446,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=db83ad60-8290-4636-b426-fee4c8cde817">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=db83ad60-8290-4636-b426-fee4c8cde817">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8504,7 +8462,7 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=588c2cf6-4e9c-46c7-89ab-5cfc4f9f13b3">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=588c2cf6-4e9c-46c7-89ab-5cfc4f9f13b3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8531,56 +8489,131 @@ Ignoring wrong pointing object 105 0 (offset 0)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9d8a58e3-699f-4736-80ac-62e508b73ef4">
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=24f9fdf0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="HandsOn-----Stroopwafel">HandsOn --- Stroopwafel<a class="anchor-link" href="#HandsOn-----Stroopwafel">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9d587e2c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<blockquote>
+<p>Similar to the <code>Japan - Germany</code> example from the <code>Introduction to LLMs</code> we will now calculate the distance between Netherlands and Germany in the vector space. This we can then use to understand what item in Germany corresponds to what the stroopwafel is in the Netherlands.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=abc0e648">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [272]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [338]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># HandsOn:</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">OLLAMA_EMBEDDING_MODEL</span> <span class="o">=</span> <span class="s2">"mxbai-embed-large"</span>
+<span class="n">embedding</span> <span class="o">=</span> <span class="n">OllamaEmbeddings</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">OLLAMA_EMBEDDING_MODEL</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="n">OLLAMA_SERVER</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fe6757bc-19f4-4e6f-ae27-4e1664a7f049">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2b8cc653">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [273]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [339]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">OLLAMA_EMBEDDING_MODEL</span> <span class="o">=</span> <span class="s2">"mxbai-embed-large"</span>
-
-<span class="n">embedding</span> <span class="o">=</span> <span class="n">OllamaEmbeddings</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">OLLAMA_EMBEDDING_MODEL</span><span class="p">,</span> <span class="n">base_url</span><span class="o">=</span><span class="n">OLLAMA_SERVER</span><span class="p">)</span>
-
-<span class="c1"># Assuming embedding is some pre-trained embedding model with an embed_query method</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Assuming embedding is some pre-trained embedding model with an embed_query method</span>
 <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Bratwurst"</span><span class="p">,</span> <span class="s2">"Mercedes"</span><span class="p">,</span> <span class="s2">"Schwarzwälder Kirschtorte"</span><span class="p">,</span> <span class="s2">"Berliner"</span><span class="p">,</span> <span class="s2">"Lebkuchen"</span><span class="p">]</span>
-
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a6e975ab">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [340]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># getting vectors of tokens/ words</span>
 <span class="n">stroopwafel_embedding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">embedding</span><span class="o">.</span><span class="n">embed_query</span><span class="p">(</span><span class="s2">"Stroopwafel"</span><span class="p">))</span>
 <span class="n">netherlands_embedding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">embedding</span><span class="o">.</span><span class="n">embed_query</span><span class="p">(</span><span class="s2">"Netherlands"</span><span class="p">))</span>
 <span class="n">germany_embedding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">embedding</span><span class="o">.</span><span class="n">embed_query</span><span class="p">(</span><span class="s2">"Germany"</span><span class="p">))</span>
-
-<span class="n">adjusted_stroopwafel_embedding</span> <span class="o">=</span> <span class="n">stroopwafel_embedding</span> <span class="o">-</span> <span class="p">(</span><span class="n">netherlands_embedding</span> <span class="o">-</span> <span class="n">germany_embedding</span><span class="p">)</span>
-
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=25a9d2d4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [341]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># calculating the comparison vector</span>
+<span class="n">comparison_embedding</span> <span class="o">=</span> <span class="n">stroopwafel_embedding</span> <span class="o">-</span> <span class="p">(</span><span class="n">netherlands_embedding</span> <span class="o">-</span> <span class="n">germany_embedding</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0de488df">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [342]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># initiating variables</span>
 <span class="n">highest_similarity</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">closest_word</span> <span class="o">=</span> <span class="kc">None</span>
-
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=54dd1d9b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [343]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># running the loop</span>
 <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+    
+    <span class="c1"># embedding the query word</span>
     <span class="n">word_embedding</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">embedding</span><span class="o">.</span><span class="n">embed_query</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
 
+    <span class="c1"># generating output</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
     <span class="n">similarity</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">adjusted_stroopwafel_embedding</span><span class="p">,</span> <span class="n">word_embedding</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
-    
+
+    <span class="c1"># capturing highest similarity</span>
     <span class="k">if</span> <span class="n">similarity</span> <span class="o">&gt;</span> <span class="n">highest_similarity</span><span class="p">:</span>
         <span class="n">highest_similarity</span> <span class="o">=</span> <span class="n">similarity</span>
         <span class="n">closest_word</span> <span class="o">=</span> <span class="n">word</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The word closest to 'stroopwafel' is '</span><span class="si">{</span><span class="n">closest_word</span><span class="si">}</span><span class="s2">' with a cosine similarity of </span><span class="si">{</span><span class="n">highest_similarity</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8608,13 +8641,40 @@ Cosine Similarity: 0.7296874018682962
 Lebkuchen
 Cosine Similarity: 0.6988265639666382
 
-The word closest to 'stroopwafel' is 'Berliner' with a cosine similarity of 0.7296874018682962.
 </pre>
 </div>
 </div>
 </div>
 </div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fe6757bc-19f4-4e6f-ae27-4e1664a7f049">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [344]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># final evaluation</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The word closest to 'stroopwafel' is '</span><span class="si">{</span><span class="n">closest_word</span><span class="si">}</span><span class="s2">' with a cosine similarity of </span><span class="si">{</span><span class="n">highest_similarity</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>The word closest to 'stroopwafel' is 'Berliner' with a cosine similarity of 0.7296874018682962.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ba890329-1411-4922-bd27-fe0490dd1208">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8625,7 +8685,7 @@ The word closest to 'stroopwafel' is 'Berliner' with a cosine similarity of 0.72
 </div>
 </div>
 </div>
-</div>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8459793e-838d-44fe-8c66-faf8fbe2ca5a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8636,7 +8696,7 @@ The word closest to 'stroopwafel' is 'Berliner' with a cosine similarity of 0.72
 </div>
 </div>
 </div>
-</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=282072da-4993-4490-a263-41fe9799be47">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8647,12 +8707,12 @@ The word closest to 'stroopwafel' is 'Berliner' with a cosine similarity of 0.72
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fafdada1-4c4e-41f8-ad1a-33861aae3930">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fafdada1-4c4e-41f8-ad1a-33861aae3930">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [204]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [345]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">vectorstore</span> <span class="o">=</span> <span class="n">Chroma</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span>
@@ -8665,21 +8725,7 @@ The word closest to 'stroopwafel' is 'Berliner' with a cosine similarity of 0.72
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=97da9fa9-2536-4d47-a1d2-c48a3c35928b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [205]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">vectorstore</span><span class="o">.</span><span class="n">similarity_search</span><span class="p">(</span><span class="n">query</span> <span class="o">=</span> <span class="n">question</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=23d736b8-d6e0-4da0-afaa-51b81046dfd3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8690,7 +8736,7 @@ The word closest to 'stroopwafel' is 'Berliner' with a cosine similarity of 0.72
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=db96f877-60d3-4741-9846-e2903831583d">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=db96f877-60d3-4741-9846-e2903831583d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8716,7 +8762,7 @@ The word closest to 'stroopwafel' is 'Berliner' with a cosine similarity of 0.72
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1f76bb9c-cafe-40c0-9bec-ff4651503492">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1f76bb9c-cafe-40c0-9bec-ff4651503492">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8742,7 +8788,7 @@ The word closest to 'stroopwafel' is 'Berliner' with a cosine similarity of 0.72
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c792e5dd-9940-402d-ac43-6b75504a819c">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c792e5dd-9940-402d-ac43-6b75504a819c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8782,7 +8828,7 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 </div>
 </div>
 </div>
-</div>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0dbf9e2e-329e-4c35-8f05-2dceea717daa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8793,17 +8839,15 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8beb6c14-5e18-43e7-9d04-59e3b8a81cc9">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4d17745b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [214]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [351]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">langchain.prompts</span> <span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
-
-<span class="c1"># Prompt</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Prompt</span>
 <span class="n">template</span> <span class="o">=</span> <span class="s2">"""Answer the question based only on the following context:</span>
 <span class="si">{context}</span>
 
@@ -8822,14 +8866,14 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[214]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[351]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>ChatPromptTemplate(input_variables=['context', 'question'], messages=[HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['context', 'question'], template="You are an assistant for question-answering tasks. Use the following pieces of retrieved context to answer the question. If you don't know the answer based on the provided context, just say that you don't know. Use three sentences maximum and keep the answer concise.\nQuestion: {question}\n\nContext: {context}\nAnswer:"))])</pre>
+<pre>ChatPromptTemplate(input_variables=['context', 'question'], messages=[HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['context', 'question'], template='Answer the question based only on the following context:\n{context}\n\nQuestion: {question}\n'))])</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e4461264-5cac-479a-917c-9bf589826da4">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e4461264-5cac-479a-917c-9bf589826da4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8844,7 +8888,7 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=55d6629f-18ec-4372-a557-b254fbb1dd2d">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=55d6629f-18ec-4372-a557-b254fbb1dd2d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8859,7 +8903,7 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 </div>
 </div>
 </div>
-</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c5e5985e-4131-446f-b4e5-baa57ec1929b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8870,17 +8914,17 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=94470770-8df4-4359-9504-ef6c8b3137ff">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=94470770-8df4-4359-9504-ef6c8b3137ff">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [217]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [352]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># result</span>
-<span class="n">answer</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">"context"</span><span class="p">:</span><span class="n">result</span><span class="p">,</span><span class="s2">"question"</span><span class="p">:</span><span class="n">question</span><span class="p">})</span>
-<span class="n">answer</span><span class="o">.</span><span class="n">content</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Invoking the RAG chain</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">"context"</span><span class="p">:</span><span class="n">result</span><span class="p">,</span><span class="s2">"question"</span><span class="p">:</span><span class="n">question</span><span class="p">})</span>
+<span class="n">response</span><span class="o">.</span><span class="n">content</span>
 </pre></div>
 </div>
 </div>
@@ -8891,14 +8935,25 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[217]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[352]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>AIMessage(content=" The TMC Entrepreneurial Lab is an initiative that fosters multidisciplinary collaboration, where diverse teams with various skills work together to tackle complex challenges. It offers an environment that encourages experimentation and learning from both successes and failures. TMC supports the entrepreneurial efforts by providing a physical space and potentially financial resources, allowing 'employeneurs' (employees who act like entrepreneurs) to develop their innovations while also working on client projects. The ownership of any innovation created within the lab remains with TMC.", response_metadata={'model': 'wizardlm2:7b', 'created_at': '2024-06-17T07:58:04.176946625Z', 'message': {'role': 'assistant', 'content': ''}, 'done_reason': 'stop', 'done': True, 'total_duration': 51761728094, 'load_duration': 3851653966, 'prompt_eval_count': 372, 'prompt_eval_duration': 26455487000, 'eval_count': 113, 'eval_duration': 21406578000}, id='run-a2ddab17-9d9c-4767-8339-eee44c3c6d82-0')</pre>
+<pre>'The TMC Entrepreneurial Lab is an initiative that fosters multidisciplinary collaboration by bringing together diverse teams with various skills to address complex challenges. It offers a space and resources for individuals to experiment, learn from failures, and celebrate breakthroughs in pioneering technology or healthcare solutions. Additionally, TMC supports employeneurs—employees who work as entrepreneurs—by allowing them to work on their own innovations alongside their client projects, providing both physical infrastructure and potentially financial support, while maintaining ownership of their innovation.'</pre>
 </div>
 </div>
 </div>
 </div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9f6c9497">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In the <code>chain.invoke()</code> example above we used directly the result output of a similarity search of the vector database. Langchain has a better approach for this via retrievers.</p>
+</div>
+</div>
+</div>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=985a51dc-ea11-46b2-b8dc-272bfca63221">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8909,30 +8964,44 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e03a2ff9-2343-4047-bb07-0a3cd4de73bf">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e03a2ff9-2343-4047-bb07-0a3cd4de73bf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [218]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [353]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">retriever</span> <span class="o">=</span> <span class="n">vectorstore</span><span class="o">.</span><span class="n">as_retriever</span><span class="p">(</span><span class="n">search_type</span><span class="o">=</span><span class="s2">"similarity"</span><span class="p">,</span> <span class="n">search_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">"k"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># here we create a retriever from the vectorstore which can perform similarity search and returns one document</span>
+<span class="n">retriever</span> <span class="o">=</span> <span class="n">vectorstore</span><span class="o">.</span><span class="n">as_retriever</span><span class="p">(</span><span class="n">search_type</span><span class="o">=</span><span class="s2">"similarity"</span><span class="p">,</span> <span class="n">search_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">"k"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=75d07a22-8234-40fa-973a-b5a84ec14023">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=08a4a6e9-447d-499b-8fd4-5b73f5aa2040">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [220]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">"context"</span><span class="p">:</span><span class="n">retriever</span><span class="p">,</span><span class="s2">"question"</span><span class="p">:</span><span class="n">question</span><span class="p">})</span>
-<span class="n">answer</span><span class="o">.</span><span class="n">content</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vectorstore</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ebe5ba3e-3af5-4d49-8e73-4531a6fb68d1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [395]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">response</span><span class="o">.</span><span class="n">dict</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -8943,14 +9012,111 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[220]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[395]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>" The TMC Entrepreneurial Lab is not explicitly defined in the provided context, but it can be inferred as an initiative or program focused on entrepreneurship, possibly utilizing technologies like 'Chroma' and 'OllamaEmbeddings' within a vectorstore (in this case, a Chroma vectorstore) for search and retrieval tasks, with parameters such as `search_kwargs={'k': 1}` indicating a preference for the top result. Without additional context, the specific nature of the TMC Entrepreneurial Lab remains an inference based on its likely focus on innovation and technology."</pre>
+<pre>{'content': " The TMC Entrepreneurial Lab is not explicitly described in the provided context, but based on the tag and the use of 'tags' and 'search_kwargs', it appears to be an initiative or a project related to entrepreneurship, possibly utilizing technology like Chroma and vector embeddings from OllamaEmbeddings for various tasks such as search and data analysis. Without additional context, I can only infer that it is an entity focused on supporting entrepreneurial efforts, potentially through technological means.",
+ 'additional_kwargs': {},
+ 'response_metadata': {'model': 'wizardlm2:7b',
+  'created_at': '2024-06-17T15:41:16.970708046Z',
+  'message': {'role': 'assistant', 'content': ''},
+  'done_reason': 'stop',
+  'done': True,
+  'total_duration': 35669502970,
+  'load_duration': 3057652251,
+  'prompt_eval_count': 180,
+  'prompt_eval_duration': 12327739000,
+  'eval_count': 103,
+  'eval_duration': 20238609000},
+ 'type': 'ai',
+ 'name': None,
+ 'id': 'run-570d2267-6ff3-4af5-9eef-106b7166f65c-0',
+ 'example': False,
+ 'tool_calls': [],
+ 'invalid_tool_calls': [],
+ 'usage_metadata': None}</pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b60696b2-067e-481d-a147-37032051e5f9">
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=75d07a22-8234-40fa-973a-b5a84ec14023">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [363]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># with this retreiver the context (relevant split) is directry passed to the question addressing the LLM.</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">"context"</span><span class="p">:</span><span class="n">retriever</span><span class="p">,</span><span class="s2">"question"</span><span class="p">:</span><span class="n">question</span><span class="p">})</span>
+<span class="n">response</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[363]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>" The TMC Entrepreneurial Lab is not explicitly described in the provided context, but based on the tag and the use of 'tags' and 'search_kwargs', it appears to be an initiative or a project related to entrepreneurship, possibly utilizing technology like Chroma and vector embeddings from OllamaEmbeddings for various tasks such as search and data analysis. Without additional context, I can only infer that it is an entity focused on supporting entrepreneurial efforts, potentially through technological means."</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=aa098889">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [364]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">response</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[364]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>AIMessage(content=" The TMC Entrepreneurial Lab is not explicitly described in the provided context, but based on the tag and the use of 'tags' and 'search_kwargs', it appears to be an initiative or a project related to entrepreneurship, possibly utilizing technology like Chroma and vector embeddings from OllamaEmbeddings for various tasks such as search and data analysis. Without additional context, I can only infer that it is an entity focused on supporting entrepreneurial efforts, potentially through technological means.", response_metadata={'model': 'wizardlm2:7b', 'created_at': '2024-06-17T15:41:16.970708046Z', 'message': {'role': 'assistant', 'content': ''}, 'done_reason': 'stop', 'done': True, 'total_duration': 35669502970, 'load_duration': 3057652251, 'prompt_eval_count': 180, 'prompt_eval_duration': 12327739000, 'eval_count': 103, 'eval_duration': 20238609000}, id='run-570d2267-6ff3-4af5-9eef-106b7166f65c-0')</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=748826de">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="HandsOn-----Answer-not-in-Splits">HandsOn --- Answer not in Splits<a class="anchor-link" href="#HandsOn-----Answer-not-in-Splits">¶</a></h4>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=087aad15">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<blockquote>
+<p>What happens if the answer is not in the splits of any retreived document?</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b60696b2-067e-481d-a147-37032051e5f9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8958,10 +9124,21 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">"context"</span><span class="p">:</span><span class="n">retriever</span><span class="p">,</span><span class="s2">"question"</span><span class="p">:</span><span class="s2">"What is a large language model?"</span><span class="p">})</span>
-<span class="n">answer</span><span class="o">.</span><span class="n">content</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">"context"</span><span class="p">:</span><span class="n">retriever</span><span class="p">,</span><span class="s2">"question"</span><span class="p">:</span><span class="s2">"What is a large language model?"</span><span class="p">})</span>
+<span class="n">response</span><span class="o">.</span><span class="n">content</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=03957484">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Better-Prompts">Better Prompts<a class="anchor-link" href="#Better-Prompts">¶</a></h4>
 </div>
 </div>
 </div>
@@ -9006,6 +9183,100 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a4e16118-a165-4808-adc7-d89d9d195706">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ba3eaf19-5335-455f-a5fe-e54d6712f23e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2764f7f1-4cfb-4516-a7e6-f25a80e370fa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b9dd43a1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [362]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[362]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>AIMessage(content=" The TMC Entrepreneurial Lab is likely an initiative or program designed to support and foster entrepreneurship, possibly leveraging technology like Chroma for data storage and OllamaEmbeddings for natural language processing within a vector store context. The provided context seems to suggest that it might utilize advanced search capabilities with 'k': 1 for relevant information, indicating a focus on retrieving top-ranked results or data points. Without additional context, the exact nature of the lab and its specific activities remain uncertain.", response_metadata={'model': 'wizardlm2:7b', 'created_at': '2024-06-17T15:34:32.13742427Z', 'message': {'role': 'assistant', 'content': ''}, 'done_reason': 'stop', 'done': True, 'total_duration': 25822861294, 'load_duration': 8436144, 'prompt_eval_count': 70, 'prompt_eval_duration': 5840493000, 'eval_count': 106, 'eval_duration': 19831949000}, id='run-972d617c-8f92-4671-bbca-f16cc559718e-0')</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e4c0a8e0-cae9-4e6b-aca5-1851f2e737e4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [393]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"source"</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[393]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>'./backend/tmc_tel_lab.pdf'</pre>
+</div>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8208a8bc-c75f-4e8e-8601-680746cd6276">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -9014,7 +9285,9 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 <div class="jp-InputPrompt jp-InputArea-prompt">In [235]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">rag_chain</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># In the final output we might want to know in which document we can find the information of the similarity search.</span>
+<span class="c1"># This is handled by RunnablePassthrough() function which can add a </span>
+<span class="n">rag_chain</span> <span class="o">=</span> <span class="p">(</span>
     <span class="p">{</span><span class="s2">"context"</span><span class="p">:</span> <span class="n">retriever</span><span class="p">,</span> <span class="s2">"question"</span><span class="p">:</span> <span class="n">RunnablePassthrough</span><span class="p">()}</span>
     <span class="o">|</span> <span class="n">prompt</span>
     <span class="o">|</span> <span class="n">llm</span>
@@ -9339,7 +9612,7 @@ FOLLOW US:Our dedication lies in being a greatworkplace where our
 </div>
 </div>
 </div>
-</div></section></section>
+</div></div></section></section>
 </div>
 </div>
 </main>
