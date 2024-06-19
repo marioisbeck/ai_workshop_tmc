@@ -10,5 +10,4 @@
 .bash_history
 
 llm/
-streamlit/venv/
-jupyter/venv/
+**/.venv/

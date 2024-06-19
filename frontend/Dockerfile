@@ -11,13 +11,13 @@ ENV PYTHONFAULTHANDLER=1 \
     PIP_NO_CACHE_DIR=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
     POETRY_VERSION=1.8.3 \
-    POETRY_VIRTUALENVS_CREATE=false \
+    POETRY_VIRTUALENVS_CREATE=true \
     POETRY_CACHE_DIR='/var/cache/pypoetry' \
     POETRY_HOME='/usr/local'
 
 # Install dependencies
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install --no-install-recommends -y build-essential curl && \
+    apt-get install --no-install-recommends -y build-essential curl nano && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Poetry
@@ -50,5 +50,4 @@ USER web
 COPY --chown=web:web . /app/
 
 # Entry point for the container
-CMD ["poetry", "run", "streamlit", "run", "/app/app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.fileWatcherType=auto"]
-
+CMD [ "streamlit", "run", "/app/app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.fileWatcherType=auto"]

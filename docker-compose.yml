@@ -29,7 +29,6 @@ services:
     ports:
       # Map port 8888 on the host (left number, your laptop) to port 8888 on the container for Jupyter
       - "8888:8888"
-      - "8000:8000"
     # Connect the container to the ai_workshop_tmc__network
     networks:
       - ai_workshop_tmc__network
@@ -51,14 +50,14 @@ services:
     working_dir: /home/jovyan
     depends_on:
       # This service depends on the chroma service
-      - chroma
+      # - chroma
       # This service depends on the ollama service
       - ollama
 
   backend:
+    container_name: backend
     build:
       context: ./backend
-    container_name: backend
     extra_hosts:
       - host.docker.internal:host-gateway
     volumes:
@@ -68,7 +67,7 @@ services:
     ports:
       - "8001:8001"
     # command: /bin/bash
-    command: ["poetry", "run", "uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8001"]
+    command: ["poetry", "run", "uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8001", "--reload"]
     # Connect the container to the ai_workshop_tmc__network
     networks:
       - ai_workshop_tmc__network
@@ -77,7 +76,7 @@ services:
     healthcheck:
       # Test command to check if the service is healthy
       # It runs "curl -f http://localhost:8000" and exits with status 1 if the command fails
-      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      test: ["CMD", "curl", "-f", "http://localhost:8001"]
       # Time between running the check (1 minute 30 seconds)
       interval: 1m30s
       # Maximum time to allow one check to run (10 seconds)
@@ -88,14 +87,14 @@ services:
     working_dir: /app
     depends_on:
       # This service depends on the chroma service
-      - chroma
+      # - chroma
       # This service depends on the ollama service
       - ollama
     
   frontend:
+    container_name: frontend
     build:
       context: ./frontend
-    container_name: frontend
     extra_hosts:
       - host.docker.internal:host-gateway
     volumes:
@@ -124,90 +123,90 @@ services:
     working_dir: /app
     depends_on:
       # This service depends on the chroma service
-      - chroma
+      # - chroma
       # This service depends on the ollama service
       - ollama
       - backend
 
-  unstructured:
-    container_name: unstructured
-    # Use the unstructured-api:0.0.69 image of unstructured-api from Quay.io
-    image: quay.io/unstructured-io/unstructured-api:0.0.69
-    # # Deploy the container with resource reservations and limitations
-    # deploy:
-    #   resources:
-    #     limits:
-    #       cpus: "0.50"
-    #       memory: "512M"
-    #     reservations:
-    #       cpus: "0.25"
-    #       memory: "256M"
-    #       devices:
-    #         # Reserve GPU resources for the container
-    #         - capabilities: [gpu]
-    # Set the command to run the API on port 8000 and bind it to all network interfaces
-    command: ["--port", "8000", "--host", "0.0.0.0"]
-    # Mount the local directory ./ingestion_data to /home/notebook-user/ingestion_data in the container
-    volumes:
-      - ./ingestion_data:/home/notebook-user/ingestion_data
-    # Map port 7001 on the host to port 8000 on the container
-    ports:
-      - "8003:8000"
-    # Connect this service to the ai_workshop_tmc__network network
-    networks:
-      - ai_workshop_tmc__network
-    # Restart the container unless it is explicitly stopped
-    restart: unless-stopped
-    # Define a health check to monitor the container's health status
-    healthcheck:
-      # Command to check the health endpoint
-      test: ["CMD-SHELL", "curl --fail http://localhost:8000 || exit 1"]
-      # Time between running the health check command
-      interval: 1m30s
-      # Maximum time to wait for the health check command to complete
-      timeout: 10s
-      # Number of consecutive failures needed to mark the container as unhealthy
-      retries: 3
-      # Time to wait after starting before beginning health checks
-      start_period: 40s
+  # unstructured:
+  #   container_name: unstructured
+  #   # Use the unstructured-api:0.0.69 image of unstructured-api from Quay.io
+  #   image: quay.io/unstructured-io/unstructured-api:0.0.69
+  #   # # Deploy the container with resource reservations and limitations
+  #   # deploy:
+  #   #   resources:
+  #   #     limits:
+  #   #       cpus: "0.50"
+  #   #       memory: "512M"
+  #   #     reservations:
+  #   #       cpus: "0.25"
+  #   #       memory: "256M"
+  #   #       devices:
+  #   #         # Reserve GPU resources for the container
+  #   #         - capabilities: [gpu]
+  #   # Set the command to run the API on port 8000 and bind it to all network interfaces
+  #   command: ["--port", "8000", "--host", "0.0.0.0"]
+  #   # Mount the local directory ./ingestion_data to /home/notebook-user/ingestion_data in the container
+  #   volumes:
+  #     - ./ingestion_data:/home/notebook-user/ingestion_data
+  #   # Map port 7001 on the host to port 8000 on the container
+  #   ports:
+  #     - "8003:8000"
+  #   # Connect this service to the ai_workshop_tmc__network network
+  #   networks:
+  #     - ai_workshop_tmc__network
+  #   # Restart the container unless it is explicitly stopped
+  #   restart: unless-stopped
+  #   # Define a health check to monitor the container's health status
+  #   healthcheck:
+  #     # Command to check the health endpoint
+  #     test: ["CMD-SHELL", "curl --fail http://localhost:8000 || exit 1"]
+  #     # Time between running the health check command
+  #     interval: 1m30s
+  #     # Maximum time to wait for the health check command to complete
+  #     timeout: 10s
+  #     # Number of consecutive failures needed to mark the container as unhealthy
+  #     retries: 3
+  #     # Time to wait after starting before beginning health checks
+  #     start_period: 40s
 
-  chroma:
-    container_name: chroma
-    # Use the chroma:0.5.1.dev172 image of Chroma from GitHub Container Registry
-    image: ghcr.io/chroma-core/chroma:0.5.1.dev172
-    # Map port 8000 on the host to port 8000 on the container
-    ports:
-      - "8004:8000"
-    # Mount the local directory ./vector_database/index to /chroma/.chroma/index in the container
-    volumes:
-      - ./vector_database/index:/chroma/.chroma/index
-    # Connect this service to the ai_workshop_tmc__network network
-    networks:
-      - ai_workshop_tmc__network
-    # Restart the container unless it is explicitly stopped
-    restart: unless-stopped
-    # Deploy the container with appropriate resource limitations
-    # deploy:
-    #   resources:
-    #     limits:
-    #       cpus: "0.50"
-    #       memory: "512M"
-    #     reservations:
-    #       cpus: "0.25"
-    #       memory: "256M"
-    # Healthcheck to monitor the health of the container
-    healthcheck:
-      # Test command to check if the service is healthy
-      # It runs "curl -f http://localhost:8000/" and exits with status 1 if the command fails
-      test: ["CMD-SHELL", "curl -f http://localhost:8000/ || exit 1"]
-      # Time between running the check (1 minute 30 seconds)
-      interval: 1m30s
-      # Maximum time to allow one check to run (10 seconds)
-      timeout: 10s
-      # Number of consecutive failures needed to consider the container as unhealthy
-      retries: 3
-      # Start period to wait before starting health checks (40 seconds)
-      start_period: 40s
+  # chroma:
+  #   container_name: chroma
+  #   # Use the chroma:0.5.1.dev172 image of Chroma from GitHub Container Registry
+  #   image: ghcr.io/chroma-core/chroma:0.5.1.dev172
+  #   # Map port 8000 on the host to port 8000 on the container
+  #   ports:
+  #     - "8004:8000"
+  #   # Mount the local directory ./vector_database/index to /chroma/.chroma/index in the container
+  #   volumes:
+  #     - ./vector_database/index:/chroma/.chroma/index
+  #   # Connect this service to the ai_workshop_tmc__network network
+  #   networks:
+  #     - ai_workshop_tmc__network
+  #   # Restart the container unless it is explicitly stopped
+  #   restart: unless-stopped
+  #   # Deploy the container with appropriate resource limitations
+  #   # deploy:
+  #   #   resources:
+  #   #     limits:
+  #   #       cpus: "0.50"
+  #   #       memory: "512M"
+  #   #     reservations:
+  #   #       cpus: "0.25"
+  #   #       memory: "256M"
+  #   # Healthcheck to monitor the health of the container
+  #   healthcheck:
+  #     # Test command to check if the service is healthy
+  #     # It runs "curl -f http://localhost:8000/" and exits with status 1 if the command fails
+  #     test: ["CMD-SHELL", "curl -f http://localhost:8000/ || exit 1"]
+  #     # Time between running the check (1 minute 30 seconds)
+  #     interval: 1m30s
+  #     # Maximum time to allow one check to run (10 seconds)
+  #     timeout: 10s
+  #     # Number of consecutive failures needed to consider the container as unhealthy
+  #     retries: 3
+  #     # Start period to wait before starting health checks (40 seconds)
+  #     start_period: 40s
 
   # The heart of the application: the large language model server ollama.
   ollama:
@@ -239,7 +238,7 @@ services:
     # Use /bin/sh as the entrypoint to run shell commands
     entrypoint: ["/bin/sh", "-c", "/bin/ollama serve"] # export OLLAMA_HOST=0.0.0.0:11434 && export OLLAMA_ORIGINS=http://ai_workshop_tmc-langserve-1:*,http://ai_workshop_tmc-streamlit-1:*,http://ai_workshop_tmc-jupyter-1:* && 
     # Start the ollama service and then run the specified command
-    command: ["ollama run ${LLM_MODEL}"]
+    command: ["ollama run ${OLLAMA_LARGE_LANGUAGE_MODEL}"]
     # network_mode: host
     networks:
       # Connect to the specified Docker network
