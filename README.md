@@ -220,6 +220,7 @@ Open Terminal on a Mac and Powershell (in Administrator mode) on a Windows machi
   docker-compose up -d --build
   ```
 * Download LLMs
+* Mac/ Linux
   ```bash
   # Pull the mxbai-embed-large model in the ollama container
   docker exec ollama ollama pull mxbai-embed-large && \
@@ -227,6 +228,17 @@ Open Terminal on a Mac and Powershell (in Administrator mode) on a Windows machi
   docker exec ollama ollama pull all-minilm && \
   # Pull the wizardlm2:7b model in the ollama container
   docker exec ollama ollama pull wizardlm2:7b && \
+  # Run the wizardlm2:7b model in the ollama container
+  docker exec ollama ollama run wizardlm2:7b
+  ```
+* Windows
+  ```powershell
+  # Pull the mxbai-embed-large model in the ollama container
+  docker exec ollama ollama pull mxbai-embed-large ` \
+  # Pull the all-minilm model in the ollama container
+  docker exec ollama ollama pull all-minilm ` \
+  # Pull the wizardlm2:7b model in the ollama container
+  docker exec ollama ollama pull wizardlm2:7b ` \
   # Run the wizardlm2:7b model in the ollama container
   docker exec ollama ollama run wizardlm2:7b
   ```
