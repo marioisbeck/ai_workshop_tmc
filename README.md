@@ -268,3 +268,4 @@ Head over to http://localhost:8888 enter the password: `fewi2398u24@*@sd` and op
 ### AI Workshop Admin Preparation Commands
 * `pandoc README.md -o part1.docx --resource-path=/Users/mario/programming/ai_workshop_tmc`
 * `pandoc ai_workshop_tmc.ipynb -o part2.docx --resource-path=/Users/mario/programming/ai_workshop_tmc`
+* `reveal-md README.md --separator "^\n#{1,4} " --vertical-separator "^\n(#####|\*\*|- \*\*Windows\*\*|- \*\*Mac/ Linux\*\*|\* \*\*Windows\*\*|\* \*\*Mac/ Linux\*\*)"`. Zoom out and in via the Browser if a slide is not entirely visible.
