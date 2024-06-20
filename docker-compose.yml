@@ -258,16 +258,6 @@ services:
       start_period: 40s 
   
   ## LLM
-  # llama3:instruct
-  # docker exec ollama ollama pull llama3:instruct
-  # docker exec ollama ollama run llama3:instruct
-
-  ## LLM
-  # tinyllama:chat
-  # docker exec ollama ollama pull tinyllama:chat
-  # docker exec ollama ollama run tinyllama:chat
-
-  ## LLM
   # wizardlm2:7b
   # docker exec ollama ollama pull wizardlm2:7b
   # docker exec ollama ollama run wizardlm2:7b
