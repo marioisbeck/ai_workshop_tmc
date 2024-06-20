@@ -1,19 +1,3 @@
----
-title: "AI Workshop TMC: Program Your Own Private AI Assistant"
-description: "AI Workshop for creating a private AI Assistant"
-author: "TMC"
-viewport: "width=device-width, initial-scale=1.0"
-apple-mobile-web-app-capable: "yes"
-apple-mobile-web-app-status-bar-style: "black-translucent"
----
-
-<!-- #remove -->
-<link rel="stylesheet" href="dist/reset.css">
-<link rel="stylesheet" href="dist/reveal.css">
-<link rel="stylesheet" href="dist/theme/night.css" id="theme">
-<link rel="stylesheet" href="plugin/highlight/monokai.css">
-<!-- #remove -->
-
 # ai_workshop_tmc
 
 Welcome to the repository for TMC's exclusive AI Workshop on programming your private AI assistant. This repository contains all resources and instructions needed to set up and build a simple ChatGPT-like AI assistant on your laptop, ensuring privacy and customization possibilities.
